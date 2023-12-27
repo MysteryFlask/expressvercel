@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-/**
- * GET product list.
- *
- * @return product list | empty.
- */
 router.get("/", async (req, res) => {
   try {
+    const searchQuery = req.query.query;
+
+    console.log("Search query:", searchQuery);
+
     res.json({
       status: 200,
       message: "Get data has successfully",
